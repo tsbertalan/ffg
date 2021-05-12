@@ -45,4 +45,12 @@ user	0m2.167s
 sys	0m1.862s
 ```
 
+How many actual results was that?
+```shell
+tsbertalan@sigurd:~/Dropbox$ ffg md the | grep ============= | wc
+   1252    1252  100185
+```
+
+
 Still pretty fast.
+
