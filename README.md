@@ -1,4 +1,6 @@
-This is pair of simple scripts for doing local full-text search. Put them in ~/bin on linux (and probably mac too) and make them executable.
+This is pair of simple scripts for doing local full-text search among files of a given extension. Put them in ~/bin on linux (and probably mac too) and make them executable.
+
+The search probably isn't best-practice (with a database of  some sort of string prefices), but it's so fast for my common use of many small text/code files, and so simple to write and read, that I don't care.
 
 Search results show line numbers and a little context around the result. It's not particularly extensible in itself, but short enough you could easily rewrite it to do something else, like return results in a more machine-parseable form.
 
@@ -22,7 +24,7 @@ tsbertalan@sigurd:~/Dropbox$ find . -iname "*.md" | wc
    2081    9562  162239
 ```
 
-**Actual usage:** a (timed) search.
+**Actual usage here** (remove the `time` at the beginning for normal, non-timed usage):
 
 ```shell
 tsbertalan@sigurd:~/Dropbox$ time ffg md "This is a search test."
