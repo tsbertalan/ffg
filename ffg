@@ -1,0 +1,30 @@
+#!/bin/bash
+args=("$@")
+numArgs=$#
+if [ $numArgs -eq 0 ]
+then
+    echo USAGE: `basename $0` ext1 ... extN query
+    exit
+fi
+lastPosition=$((numArgs - 1))
+query=${args[${lastPosition}]}
+
+
+# remove the last item:
+unset args[${#args[@]}-1]
+
+echo "Searching for \"" $query "\" in" ${args[*]} "files."
+
+for ext in "${args[@]}"
+do
+    while read -r line    
+    do
+        echo
+        echo
+        echo
+        echo ===============================================================================
+        echo $line
+        grep --line-number -i -B 1 -A 1 "$query" "$line" --color=always
+    done <<< "$( $HOME/bin/findinfiles "$query" "$ext" )"
+done
+
