@@ -1,4 +1,4 @@
-(Testing on Ubuntu 20.04 with file stored on an SSD.)
+(Testing on Ubuntu 20.04 with file stored on an SSD, but, after *find* does its caching, it's no slower on 16.04 with spinning rust.)
 
 Count the total number of files (for reference):
 
